@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Prediction</title>
+  </head>
+  <body>
+    <h1>Image Prediction</h1>
+
+    <form
+      action="{{ url_for('upload_file') }}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" accept=".png, .jpg, .jpeg" />
+      <input type="submit" value="Predict" />
+    </form>
+
+    {% if original_img_url %}
+    <div>
+      <h2>Original Image:</h2>
+      <img
+        src="{{ original_img_url }}"
+        alt="Original Image"
+        style="max-width: 500px"
+      />
+    </div>
+    {% endif %} {% if detected_img_url %}
+    <div>
+      <h2>Detected Image:</h2>
+      <img
+        src="{{ detected_img_url }}"
+        alt="Detected Image"
+        style="max-width: 500px"
+      />
+    </div>
+    {% endif %} {% if detected_classes %}
+    <div id="predictionResult">
+      <h2>Detected Classes:</h2>
+      <ul>
+        {% for class in detected_classes %}
+        <li>{{ class }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </body>
+</html>

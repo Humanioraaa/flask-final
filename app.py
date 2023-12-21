@@ -44,9 +44,6 @@ credentials = service_account.Credentials.from_service_account_file(
 client = storage.Client(credentials=credentials, project='frutyripe')
 bucket = client.get_bucket('frutyripe.appspot.com')
 
-
-
-
 bucket_name = 'frutyripe.appspot.com'
 file_path = './app.py'  # Ganti dengan lokasi file lokal
 destination_blob_name = './files/detect'  # Ganti dengan nama folder di Google Cloud Storage
@@ -143,34 +140,6 @@ def upload_file():
             return render_template('index.html', detected_classes=detected_classes, original_img_url=original_img_url, detected_img_url=detected_img_url)
 
     return render_template('index.html')
-
-@app.route('/upload-to-gcs', methods=['POST'])
-def upload_to_gcs_route():
-    # Check if the post request has the file part
-    if 'file' not in request.files:
-        return redirect(request.url)
-    file = request.files['file']
-    # If the user does not select a file, the browser submits an
-    # empty file without a filename.
-    if file.filename == '':
-        return redirect(request.url)
-    if file (file.filename):
-        filename = secure_filename(file.filename)
-        # Define the source file path
-        source_file_path = os.path.join('./runs/detect', filename)
-        destination_blob_name = os.path.join('files', filename)  # Adjust the path as needed
-
-        # Create a GCS client
-        storage_client = storage.Client()
-        # Get the bucket
-        bucket = storage_client.bucket(bucket_name)
-        # Create a blob object
-        blob = bucket.blob(destination_blob_name)
-        # Upload the file to GCS
-        blob.upload_from_filename(source_file_path)
-        return 'File uploaded successfully to GCS'
-    return 'There was an error uploading the file'
-
 
 
 if __name__ == '__main__':

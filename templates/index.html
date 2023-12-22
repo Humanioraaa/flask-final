@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Prediction</title>
+    <link rel="stylesheet" href="https://smith2021.github.io/hermes/w3.css" />
   </head>
-  <body>
-    <h1>Image Prediction</h1>
-
+  <body style="display: flex; margin: 100px; flex-direction: column">
     <form
       action="{{ url_for('upload_file') }}"
       method="post"
       enctype="multipart/form-data"
     >
       <input type="file" name="file" accept=".png, .jpg, .jpeg" />
-      <input type="submit" value="Predict" />
+      <input type="submit" value="Predict" class="w3-button w3-blue roboto" />
     </form>
+
+    <a
+      href="https://fruityripe-jekdnqdoea-uc.a.run.app/"
+      style="text-decoration: none"
+      >Back To Dashboard
+    </a>
 
     {% if original_img_url %}
     <div>

@@ -1,0 +1,645 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  background: #2a4ba0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 75px;
+  height: auto;
+  margin-left: 30px;
+}
+
+.logo img {
+  width: 55px;
+  height: auto;
+}
+
+.logo-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  background: linear-gradient(
+    to right,
+    red,
+    orange
+  ); /* Gradient dari merah ke orange */
+  -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+  color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+  display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+  align-items: center;
+  position: absolute;
+  left: 45%;
+}
+
+nav ul {
+  margin-right: 30px;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+nav a {
+  color: #f8f9fb;
+  font-size: 16px;
+  font-weight: 580;
+  letter-spacing: 1px;
+  border: 1.5px solid transparent;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+nav ul li i {
+  cursor: pointer;
+}
+
+a.active,
+a:hover {
+  border: 1.5px solid #f8f9fb;
+  transition: 0.5s;
+}
+
+nav #icon-menu {
+  display: none;
+}
+nav label i {
+  margin-right: 30px;
+  color: #f8f9fb;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+  display: none;
+}
+
+nav i {
+  color: #f8f9fb;
+}
+
+.wrapper {
+  margin: 50px auto;
+  background: #2a4ba0;
+  width: 450px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.wrapper header {
+  color: #f8f9fb;
+  font-size: 20px;
+  text-align: center;
+}
+
+.wrapper form {
+  height: 167px;
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #f8f9fb;
+  cursor: pointer;
+}
+
+form :where(i, p) {
+  color: #f8f9fb;
+}
+form i {
+  font-size: 40px;
+}
+
+form p {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+section .row {
+  background: #153075;
+  margin-bottom: 10px;
+  width: 415px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f8f9fb;
+}
+
+section .row i {
+  font-size: 24px;
+  color: #e2a300;
+}
+
+section .details span {
+  font-size: 14px;
+}
+
+.progress-area .row .content {
+  width: 100%;
+  margin-left: 15px;
+}
+
+.progress-area .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uploaded-area .row .content {
+  display: flex;
+  align-items: center;
+}
+
+.uploaded-area .row .details {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+.progress-area .progress-bar {
+  height: 6px;
+  width: 100%;
+  background: #2a4ba0;
+  margin-top: 7px;
+  margin-bottom: 4px;
+  border-radius: 30px;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background: #e2a300;
+  border-radius: inherit;
+}
+
+.uploaded-area {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.uploaded-area::-webkit-scrollbar {
+  width: 0px;
+}
+
+.uploaded-area .details .size {
+  font-size: 10px;
+}
+
+.uploaded-area .fa-check {
+  color: #e2a300;
+  font-size: 20px;
+}
+
+.big-title {
+  font-size: 40px;
+  font-family: Manrope;
+  font-weight: 800;
+  line-height: 62.55px;
+  color: #2a4ba0;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.medium-title {
+  font-size: 20px;
+  font-family: Manrope;
+  font-weight: 400;
+  line-height: 30.02px;
+  color: #2a4ba0;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+.content-banana,
+.content-apple,
+.content-mango,
+.content-papaya,
+.content-avocado,
+.content-pineapple,
+.content-strawberry,
+.content-watermelon {
+  width: 154px;
+  height: 164px;
+  border-radius: 12px;
+  margin: 40px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.content-banana {
+  background: rgba(226, 163, 0, 0.4);
+}
+
+.content-apple {
+  background: rgba(194, 4, 11, 0.4);
+}
+
+.content-mango {
+  background: rgba(231, 137, 1, 0.4);
+}
+
+.content-papaya {
+  background: rgba(254, 96, 5, 0.4);
+}
+
+.content-avocado {
+  background: rgba(148.62, 181.69, 54.51, 0.4);
+}
+
+.content-pineapple {
+  background: rgba(255, 156.83, 0, 0.4);
+}
+
+.content-strawberry {
+  background: rgba(204, 17, 1, 0.4);
+}
+
+.content-watermelon {
+  background: rgba(47, 114, 10, 0.4);
+}
+
+.content-banana:hover,
+.content-apple:hover,
+.content-mango:hover,
+.content-papaya:hover,
+.content-avocado:hover,
+.content-pineapple:hover,
+.content-strawberry:hover,
+.content-watermelon:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+
+.circle-banana,
+.circle-apple,
+.circle-mango,
+.circle-papaya,
+.circle-avocado,
+.circle-pineapple,
+.circle-strawberry,
+.circle-watermelon {
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.circle-banana {
+  background: #e2a300;
+}
+
+.circle-apple {
+  background: #c2040b;
+}
+
+.circle-mango {
+  background: #e78901;
+}
+
+.circle-papaya {
+  background: #fe6005;
+}
+
+.circle-avocado {
+  background: #95b637;
+}
+
+.circle-pineapple {
+  background: #ff9d00;
+}
+
+.circle-strawberry {
+  background: #cc1101;
+}
+
+.circle-watermelon {
+  background: #2f720a;
+}
+
+.content-banana img,
+.content-apple img,
+.content-mango img,
+.content-papaya img,
+.content-avocado img,
+.content-pineapple img,
+.content-strawberry img,
+.content-watermelon img {
+  width: 130px;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.content-banana p,
+.content-apple p,
+.content-mango p,
+.content-papaya p,
+.content-avocado p,
+.content-pineapple p,
+.content-strawberry p,
+.content-watermelon p {
+  font-size: 15px;
+  font-family: Manrope;
+  font-weight: 600;
+  line-height: 30.02px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.content-banana p {
+  color: #e2a300;
+}
+
+.content-apple p {
+  color: #c2040b;
+}
+
+.content-mango p {
+  color: #e78901;
+}
+
+.content-papaya p {
+  color: #fe6005;
+}
+
+.content-avocado p {
+  color: #95b637;
+}
+
+.content-pineapple p {
+  color: #ff9d00;
+}
+
+.content-strawberry p {
+  color: #cc1101;
+}
+
+.content-watermelon p {
+  color: #2f720a;
+}
+
+/* responsive */
+@media (max-width: 1048px) {
+  .logo {
+    width: 75px;
+    height: auto;
+    margin-left: 30px;
+  }
+
+  nav ul {
+    margin-right: 20px;
+  }
+
+  .logo-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(
+      to right,
+      red,
+      orange
+    ); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 45%;
+  }
+}
+
+@media (max-width: 840px) {
+  body {
+    z-index: 1;
+  }
+
+  .logo-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(
+      to right,
+      red,
+      orange
+    ); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+  }
+
+  nav #icon-menu {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #153075;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 4;
+  }
+
+  nav li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  a.active,
+  a:hover {
+    border: none;
+    color: #f9b023;
+    transition: 0.5s;
+  }
+
+  i.active,
+  i:hover {
+    color: #f9b023;
+    transition: 0.5s;
+  }
+
+  nav ul.show {
+    left: 0;
+  }
+
+  .wrapper {
+    margin: 50px auto;
+    background: #2a4ba0;
+    width: 350px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .wrapper form {
+    height: 167px;
+    width: 100%;
+    display: flex;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #f8f9fb;
+    cursor: pointer;
+  }
+
+  section .row {
+    background: #153075;
+    margin-bottom: 10px;
+    width: 315px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #f8f9fb;
+  }
+
+  .big-title {
+    font-size: 35px;
+    font-family: Manrope;
+    font-weight: 800;
+    line-height: 62.55px;
+    color: #2a4ba0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .medium-title {
+    font-size: 15px;
+    font-family: Manrope;
+    font-weight: 400;
+    line-height: 30.02px;
+    color: #2a4ba0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(
+      to right,
+      red,
+      orange
+    ); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 35%;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(
+      to right,
+      red,
+      orange
+    ); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 38%;
+  }
+
+  .wrapper {
+    margin: 50px auto;
+    background: #2a4ba0;
+    width: 300px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .wrapper form {
+    height: 167px;
+    width: 100%;
+    display: flex;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #f8f9fb;
+    cursor: pointer;
+  }
+
+  section .row {
+    background: #153075;
+    margin-bottom: 10px;
+    width: 265px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #f8f9fb;
+  }
+}
